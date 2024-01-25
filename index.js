@@ -6,10 +6,10 @@ const db = require("./config/db");
 const userRouter = require("./router/user.router");
 const serviceRouter = require("./router/service.router");
 const contractRouter = require("./router/contract.router");
-
 const itemRouter = require("./router/item.router");
 const walletRouter = require("./router/wallet.router");
-
+const bookingServiceRouter = require("./router/bookingService.router")
+const promotionRouter = require("./router/promotion.router")
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -21,6 +21,8 @@ app.use("/service", serviceRouter);
 app.use("/contract", contractRouter);
 app.use("/item", itemRouter);
 app.use("/wallet", walletRouter);
+app.use("/bookingService", bookingServiceRouter);
+app.use("/promotion", promotionRouter);
 
 app.listen(port, (req, res) => {
   console.log(`Listen port: ${port}`);

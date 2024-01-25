@@ -42,7 +42,7 @@ const updatebookingService = async (req, res) => {
 
         const checkUpdate = await bookingServiceModel.updateOne(
             { _id:_id },
-            { status: newStatus}
+            { $set: {status: newStatus}}
         );
 
         if (checkUpdate.modifiedCount > 0) {
