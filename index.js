@@ -5,6 +5,8 @@ const db = require("./config/db");
 
 const userRouter = require("./router/user.router");
 const serviceRouter = require("./router/service.router");
+const contractRouter = require("./router/contract.router");
+
 const itemRouter = require("./router/item.router");
 const walletRouter = require("./router/wallet.router");
 
@@ -16,6 +18,7 @@ const port = 5000;
 
 app.use("/user", userRouter);
 app.use("/service", serviceRouter);
+app.use("/contract", contractRouter);
 app.use("/item", itemRouter);
 app.use("/wallet", walletRouter);
 
