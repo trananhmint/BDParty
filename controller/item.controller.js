@@ -38,14 +38,18 @@ const createNewItem = async (req, res) => {
 
 const updateItem = async (req, res) => {
   try {
-    const { _id, newName } = req.body;
+    const { _id, newName, newQuantity, newPrice } = req.body;
 
     console.log(_id);
     console.log(newName);
+    console.log(newQuantity);
+    console.log(newPrice)
 
     const checkUpdate = await itemModel.updateOne(
       { _id },
-      { name: newName }
+      { name: newName },
+      { quantity: newQuantity},
+      { price: newPrice}
     );
 
     console.log(checkUpdate);

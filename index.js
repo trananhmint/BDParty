@@ -6,6 +6,7 @@ const db = require("./config/db");
 const userRouter = require("./router/user.router");
 const serviceRouter = require("./router/service.router");
 const itemRouter = require("./router/item.router");
+const walletRouter = require("./router/wallet.router");
 
 const app = express();
 app.use(express.json());
@@ -16,6 +17,7 @@ const port = 5000;
 app.use("/user", userRouter);
 app.use("/service", serviceRouter);
 app.use("/item", itemRouter);
+app.use("/wallet", walletRouter);
 
 app.listen(port, (req, res) => {
   console.log(`Listen port: ${port}`);

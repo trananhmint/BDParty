@@ -4,7 +4,7 @@ const {
   createNewItem,
   deleteItem,
   updateItem,
-} = require("../controller/user.controller");
+} = require("../controller/wallet.controller");
 
 const router = express.Router();
 
