@@ -4,8 +4,6 @@ const getAllItem = async (req, res) => {
   try {
     const items = await itemModel.find({});
 
-    // find / findOne({_id}) / find({status: "Active"})
-
     res.status(200).json(items);
   } catch (error) {
     res.status(500).json(error);
@@ -38,18 +36,14 @@ const createNewItem = async (req, res) => {
 
 const updateItem = async (req, res) => {
   try {
-    const { _id, newName, newQuantity, newPrice } = req.body;
+    const { _id, name } = req.body;
 
     console.log(_id);
-    console.log(newName);
-    console.log(newQuantity);
-    console.log(newPrice)
+    console.log(name);
 
     const checkUpdate = await itemModel.updateOne(
       { _id },
-      { name: newName },
-      { quantity: newQuantity},
-      { price: newPrice}
+      { name: name },
     );
 
     console.log(checkUpdate);
@@ -84,4 +78,4 @@ const deleteItem = async (req, res) => {
   }
 };
 
-module.exports = { getAllItem, createNewItem, deleteItem, updateItem };
+module.exports = { getAllItem, createNewItem,  deleteItem, updateItem };

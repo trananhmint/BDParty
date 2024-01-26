@@ -1,10 +1,5 @@
 const express = require("express");
-const {
-  getAllItem,
-  createNewItem,
-  deleteItem,
-  updateItem,
-} = require("../controller/wallet.controller");
+const { getAllItem, createNewItem, updateItem, deleteItem } = require("../controller/item.controller");
 
 const router = express.Router();
 

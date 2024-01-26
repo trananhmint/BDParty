@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 
 const walletSchema = mongoose.Schema({
-    balance: {type: Float32Array, require: true},
+    balance: {type: Number, require: true},
     userID: {type: String, require: true}
 })
 
-const itemModel = mongoose.model("Item", itemSchema);
+const walletModel = mongoose.model("Wallet", walletSchema);
 
-module.exports = itemModel;
+module.exports = walletModel;

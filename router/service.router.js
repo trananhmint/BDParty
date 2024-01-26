@@ -1,9 +1,6 @@
 const express = require("express");
 const { createNewService, getAllService, updateService, deleteService } = require("../controller/service.controller");
 
-
-
-
 const router = express.Router();
 
 router.post("/", createNewService);
