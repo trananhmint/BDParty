@@ -11,6 +11,6 @@ const router = express.Router();
 router.get("/", getAllTransaction);
 router.post("/", createNewTransaction);
 router.put("/", updateTransaction);
-router.delete("/", deleteTransaction);
+router.delete("/:id", deleteTransaction);
 
 module.exports = router;
