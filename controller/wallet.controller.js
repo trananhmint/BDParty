@@ -36,14 +36,14 @@ const createNewWallet = async (req, res) => {
 
 const updateWallet = async (req, res) => {
   try {
-    const { _id, newBalance } = req.body;
+    const { _id, balance } = req.body;
 
     console.log(_id);
-    console.log(newBalance);
+    console.log(balance);
 
     const checkUpdate = await walletModel.updateOne(
       { _id },
-      { balance: newBalance }
+      { balance: balance }
     );
 
     console.log(checkUpdate);

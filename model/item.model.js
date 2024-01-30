@@ -5,6 +5,7 @@ const itemSchema = mongoose.Schema({
     quantity: {type: Number, require: true},
     price: {type: Number, require: true},
     total: {type: Number, require: true},
+    serviceID:{type: Object, require: true},
     status: {type: String, enum: {values: ["Available", "Unavailable"]}},
 })
 

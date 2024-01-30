@@ -12,13 +12,16 @@ const getAllItem = async (req, res) => {
 
 const createNewItem = async (req, res) => {
   try {
-    const { name, quantity, price, total, status } = req.body;
+    const { name, quantity, price, serviceID, status } = req.body;
+
+    const total = quantity * price;
 
     const item = new itemModel({
       name,
       quantity,
       price,
       total,
+      serviceID,
       status,
     });
 
@@ -36,14 +39,35 @@ const createNewItem = async (req, res) => {
 
 const updateItem = async (req, res) => {
   try {
-    const { _id, name } = req.body;
+    const { _id, name, quantity, price, serviceID, status } = req.body;
+
+    const total = quantity * price;
 
     console.log(_id);
     console.log(name);
+    console.log(quantity);
+    console.log(price);
+    console.log(total);
+    console.log(serviceID);
+    console.log(status);
 
     const checkUpdate = await itemModel.updateOne(
       { _id },
-      { name: name },
+      // { name: name },
+      // {quantity: quantity},
+      // {price: price},
+      // {total: total},
+      // {status: status}
+      {
+        $set: {
+          name: name,
+          quantity: quantity,
+          price: price,
+          total: total,
+          serviceID: serviceID,
+          status: status,
+        },
+      }
     );
 
     console.log(checkUpdate);
